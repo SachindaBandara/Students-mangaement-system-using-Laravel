@@ -16,8 +16,10 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(): View 
-    {
-        //
+    { 
+        $students = Student :: all();
+        return view ('students.index')->with('students', $students);
+
     }
 
     /**
