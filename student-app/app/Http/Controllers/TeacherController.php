@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
-use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\View\View;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class StudentController extends Controller
      */
     public function index(): View
     {
-        $students = Student::all();
-        return view('students.index')->with('students', $students);
+        $teachers = Teacher::all();
+        return view('teachers.index')->with('teachers', $teachers);
     }
 
     /**
@@ -28,7 +28,7 @@ class StudentController extends Controller
      */
     public function create(): View
     {
-        return view('students.create');
+        return view('teachers.create');
     }
 
     /**
@@ -40,8 +40,8 @@ class StudentController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Studnet Added!');
+        Teacher::create($input);
+        return redirect('teachers')->with('flash_message', 'Studnet Added!');
     }
 
     /**
@@ -52,8 +52,8 @@ class StudentController extends Controller
      */
     public function show($id): View
     {
-        $students = student::find($id);
-        return view('students.show')->with('students', $students);
+        $teachers = Teacher::find($id);
+        return view('teachers.show')->with('teachers', $teachers);
     }
 
     /**
@@ -64,8 +64,8 @@ class StudentController extends Controller
      */
     public function edit($id): View
     {
-        $students = student::find($id);
-        return view('students.edit')->with('students', $students);
+        $teachers = Teacher::find($id);
+        return view('teachers.edit')->with('teachers', $teachers);
     }
 
     /**
@@ -77,10 +77,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        $students = Student::find($id);
+        $teachers = Teacher::find($id);
         $input = $request->all();
-        $students->update($input);
-        return redirect('students')->with('flash message', 'student updated!');
+        $teachers->update($input);
+        return redirect('teachers')->with('flash message', 'Teacher updated!');
     }
 
     /**
@@ -91,7 +91,7 @@ class StudentController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash message', 'student deleted!');
+        Teacher::destroy($id);
+        return redirect('teachers')->with('flash message', 'Teacher deleted!');
     }
 }
