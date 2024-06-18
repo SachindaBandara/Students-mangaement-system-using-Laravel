@@ -93,11 +93,11 @@
                 <!-- The sidebar -->
                 <div class="sidebar">
                     <a class="active" href="#home">Home</a>
-                    <a href="#student">Student</a>
-                    <a href="#teacher">Teacher</a>
-                    <a href="#courses">Courses</a>
-                    <a href="#enrollment">Enrollment</a>
-                    <a href="#payment">Payment</a>
+                    <a href="{{ url('/students') }}">Student</a>
+                    <a href="{{ url('/teachers') }}">Teacher</a>
+                    <a href="{{ url('/courses') }}">Courses</a>
+                    <a href="{{ url('/enrollment') }}">Enrollment</a>
+                    <a href="{{ url('/payment') }}">Payment</a>
                 </div>
             </div>
 

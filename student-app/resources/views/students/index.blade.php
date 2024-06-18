@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h2>Studnet Application</h2>
+        <h2 style="text-align: center;">Student Application</h2>
     </div>
     <div class="card-body">
         <a href="{{ url('/students/create') }}" class="btn btn-success btn-sm" title="Add New Student">
@@ -12,7 +12,7 @@
         <br />
         <br />
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" style="text-align: center;">
                 <thead>
                     <tr>
                         <th>#</th>
