@@ -99,12 +99,12 @@
                     <a href="#enrollment">Enrollment</a>
                     <a href="#payment">Payment</a>
                 </div>
-
-                <!-- Page content -->
-               
-                    @yield('content')
-                
             </div>
+
+            <!-- Page content -->
+            <div class="col-md-9">
+                    @yield('content')
+                </div>
         </div>
     </div>
 

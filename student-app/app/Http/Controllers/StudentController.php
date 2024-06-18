@@ -27,9 +27,9 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+       return view('students.create');
     }
 
     /**
@@ -38,9 +38,12 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse 
     {
-        //
+        $input = $request -> all();
+        Student :: create($input);
+        return redirect('students') ->with('flash_message','Studnet Added!');
+
     }
 
     /**
