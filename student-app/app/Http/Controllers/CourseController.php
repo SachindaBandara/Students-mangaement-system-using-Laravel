@@ -3,32 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
-use App\Models\Student;
+use App\Models\Course;
 use Illuminate\View\View;
 
-class StudentController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(): View
+    public function index()
     {
-        $students = Student::all();
-        return view('students.index')->with('students', $students);
+        $courses = Course::all();
+        return view('courses.index')->with('courses', $courses);
     }
+
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(): View
+    public function create()
     {
-        return view('students.create');
+        return view('courses.create');
     }
 
     /**
@@ -37,11 +36,11 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $input = $request->all();
-        Student::create($input);
-        return redirect('students')->with('flash_message', 'Studnet Added!');
+        Course::create($input);
+        return redirect('courses')->with('flash_message', 'Course Added!');
     }
 
     /**
@@ -50,10 +49,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id): View
+    public function show(string $id)
     {
-        $students = Student::find($id);
-        return view('students.show')->with('students', $students);
+        $courses = Course::find($id);
+        return view('courses.show')->with('courses', $courses);
     }
 
     /**
@@ -62,10 +61,10 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id): View
+    public function edit(string $id)
     {
-        $students = Student::find($id);
-        return view('students.edit')->with('students', $students);
+        $courses  = Course::find($id);
+        return view('courses.edit')->with('courses', $courses);
     }
 
     /**
@@ -75,12 +74,12 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, string $id)
     {
-        $students = Student::find($id);
+        $courses = Course::find($id);
         $input = $request->all();
-        $students->update($input);
-        return redirect('students')->with('flash message', 'student updated!');
+        $courses->update($input);
+        return redirect('courses')->with('flash message', 'Course updated!');
     }
 
     /**
@@ -89,9 +88,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id): RedirectResponse
+    public function destroy(string $id)
     {
-        Student::destroy($id);
-        return redirect('students')->with('flash message', 'student deleted!');
+        Course::destroy($id);
+        return redirect('courses')->with('flash message', 'Course deleted!');
     }
 }
