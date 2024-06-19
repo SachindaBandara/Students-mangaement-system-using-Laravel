@@ -1,1 +1,1 @@
-# Students-mangaement-system-using-PHP-Laravel
+# Students-mangaement-system-using-Laravel
