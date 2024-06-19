@@ -3,10 +3,10 @@
 
 <div class="card">
     <div class="card-header">
-        <h2 style="text-align: center;">Batche Application</h2>
+        <h2 style="text-align: center;">Batch Application</h2>
     </div>
     <div class="card-body">
-        <a href="{{ url('/batches/create') }}" class="btn btn-success btn-sm" title="Add New Course">
+        <a href="{{ url('/batches/create') }}" class="btn btn-success btn-sm" title="Add New Batch">
             <i class="fa fa-plus" aria-hidden="true"></i> Add New
         </a>
         <br />
@@ -19,7 +19,7 @@
                         <th>Batch Name</th>
                         <th>Course Name</th>
                         <th>Start Date</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

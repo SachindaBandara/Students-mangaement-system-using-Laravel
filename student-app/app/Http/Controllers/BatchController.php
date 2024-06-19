@@ -80,7 +80,7 @@ class BatchController extends Controller
         $batches = Batch::find($id);
         $input = $request->all();
         $batches->update($input);
-        return redirect('batches')->with('flash message', 'Batche updated!');
+        return redirect('batches')->with('flash message', 'Batch updated!');
     }
     
 
