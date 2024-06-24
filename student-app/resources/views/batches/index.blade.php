@@ -9,7 +9,7 @@
         <a href="{{ url('/batches/create') }}" class="btn btn-success btn-sm" title="Add New Batch">
             <i class="fa fa-plus" aria-hidden="true"></i> Add New
         </a>
-        <br />  
+        <br />
         <br />
         <div class="table-responsive">
             <table class="table" style="text-align: center;">
