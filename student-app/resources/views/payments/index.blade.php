@@ -39,6 +39,7 @@
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete payments" onclick="return confirm('Confirm delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                             </form>
+                            <a href="{{url('/report/report1/' . $item->id)}}" title="Edit Payment"><button class="btn btn-success"><i class="fa fa-print" aria-hidden="true"></i>Print</button>
                         </td>
                     </tr>
                     @endforeach
